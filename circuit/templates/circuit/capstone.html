@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html id="html" lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'circuit/capstone.css' %}"></link>
+        <script src="{% static 'circuit/capstone.js' %}"></script>
+    </head>
+    <title>
+        Capstone
+    </title>
+    <body id="body" style="position: absolute; top:0; left: 0; margin: 0;">
+        <header>
+            <h2>Capstone</h2>
+            <div id="search">
+                <input id="input" class="text">
+                <button onclick="searchDesigns()">Search</button>
+                <button id="last" onclick="lastPage()">Last Page</button>
+                <button id="next" onclick="nextPage()">Next Page</button>
+            </div>
+            <div>
+                <button id="hide" class="save" onclick="viewProject()">View Project</button>
+                <button id="show" class="save" onclick="seeDesigns()">See Designs</button>
+                <button id="save" class="save" onclick="save()">Save</button>
+            </div>
+        </header>
+        <div id="workSpace" style="display: defualt;">
+            <svg id="parentSvg" height="10000" width="10000">
+                <rect id="svg" width="10000" height="10000" style="fill:lightgray;" />
+            </svg>
+            <footer>
+                <div id="scp">
+                    <button onclick="areaSelect()">select</button>
+                    <button onclick="cut()">cut</button>
+                    <button onclick="copy()">copy</button>
+                    <button onclick="paste()">paste</button>
+                    <button onclick="back()">undo</button>
+                    <button onclick="forward()">redo</button>
+                </div>
+            </footer>
+        </div>
+        <div id="designs">
+        </div>
+    </body>
+</html>
